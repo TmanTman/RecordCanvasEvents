@@ -1,0 +1,14 @@
+{
+  "name": "paperjs",
+  "homepage": "https://github.com/kmakblob/paperjs",
+  "_release": "cd2c33a52c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "cd2c33a52c2e6f9ea19ddb47858baae18f39ef6c"
+  },
+  "_source": "https://github.com/kmakblob/paperjs.git",
+  "_target": "*",
+  "_originalSource": "paperjs",
+  "_direct": true
+}
