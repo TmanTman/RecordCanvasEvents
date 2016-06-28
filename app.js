@@ -54,6 +54,7 @@ canvasTools.onMouseUp = function(event) {
 //Drawing tools
 var path;
 function drawStart(pX, pY) {
+    console.log('start');
     path = new Path();
     path.strokeColor = 'blue';
     path.strokeWidth = 3;
@@ -61,10 +62,12 @@ function drawStart(pX, pY) {
 }
 
 function drawMove(pX, pY) {
+    console.log('move');
     path.add(new Point(pX, pY));
 }
 
 function drawStop() {
+    console.log('stop');
     path.simplify(5);
 }
 
@@ -144,9 +147,9 @@ function playRecording() {
         name: 'canvas',
         timings: timings
     };
-    paperScopePlayback.activate();
-    var kinetophone = new Kinetophone([canvasChannel], 10*1000);
+    var kinetophone = new Kinetophone([canvasChannel], timings[timings.length - 1].start + 100);
     kinetophone.on('enter:canvas', function(event) {
+        paperScopePlayback.activate();
         switch(event.data.action) {
             case 'drawStart':
                 drawStart(event.data.x, event.data.y);
