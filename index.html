@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>DataStructure</title>
+    <meta name="viewport" content="initial-scale=1">
     <script src="bower_components/kinetophone/build/kinetophone.js"></script>
     <script src="bower_components/paper/dist/paper-core.js"></script>
   </head>
@@ -11,8 +12,14 @@
      </p>
      <button id="record">Record</button>
      <div>
-         <canvas style="display:inline-block" id="leftCanvas"></canvas>
-         <canvas style="display:inline-block" id="rightCanvas"></canvas>
+         <div style="display:inline-block">
+            <h2> Write on this canvas </h2>
+             <canvas id="leftCanvas"></canvas>
+         </div>
+         <div style="display:inline-block">
+             <h2> Playback happens on this canvas </h2>
+             <canvas id="rightCanvas"></canvas>
+         </div>
      </div>
     <script src="app.js"></script>
   </body>
