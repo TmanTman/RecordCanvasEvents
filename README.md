@@ -1,7 +1,7 @@
 # RecordCanvasEvents
 Attempts to record and play back annotations made on a canvas
 
-A live demo on the gh-pages branch [here](https://tmantman.github.io/RecordCanvasEvents/)
+A live demo on the gh-pages branch [here](https://tmantman.github.io/RecordCanvasEvents/). Press the record button and draw on the indicated canvas. Press the stop button. Playback will then occur on the other canvas.
 
 This project uses [paperjs](http://paperjs.org/) and [kinetophone](https://github.com/BinaryMuse/kinetophone) to record canvas
 events and play it back.
