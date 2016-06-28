@@ -8,12 +8,14 @@ var paperScopePlayback = new PaperScope();
 setupCanvas(paperScopeWrite, leftCanvas);
 setupCanvas(paperScopePlayback, rightCanvas);
 function setupCanvas(paperScope, canvas) {
-    canvas.height = 500;
-    canvas.width = 500;
+    var w = 300;
+    var h = 200;
+    canvas.height = h;
+    canvas.width = w;
     paperScope.setup(canvas);
     paperScope.activate();
     var rect = new Rectangle(new Point(0, 0),
-        new Point(500, 500));
+        new Point(w, h));
     var rectPath = new Path.Rectangle(rect);
     rectPath.fillColor = 'yellow';
     paperScope.view.draw();
@@ -78,7 +80,7 @@ function clear() {
 //Playback
 var timings = [];
 var startTime = new Date();
-var duration = 50;
+var duration = 100;
 var shouldRecord = false;
 
 function startRecording() {
@@ -95,7 +97,7 @@ function stopAndPlayRecording() {
 function recordStart(pX, pY) {
     timings.push({
         start: getTimeDifference(),
-        duration: 50,
+        duration: duration,
         data: {
             action: 'drawStart',
             x: pX,
@@ -107,7 +109,7 @@ function recordStart(pX, pY) {
 function recordMove(pX, pY) {
     timings.push({
         start: getTimeDifference(),
-        duration: 50,
+        duration: duration,
         data: {
             action: 'drawMove',
             x: pX,
@@ -119,7 +121,7 @@ function recordMove(pX, pY) {
 function recordStop(pX, pY) {
     timings.push({
         start: getTimeDifference(),
-        duration: 50,
+        duration: duration,
         data: {
             action: 'drawStop',
             x: pX,
@@ -131,7 +133,7 @@ function recordStop(pX, pY) {
 function recordClear(x, y) {
     timings.push({
         start: getTimeDifference(),
-        duration: 50,
+        duration: duration,
         data: {
             action: 'clear'
         }
@@ -147,7 +149,7 @@ function playRecording() {
         name: 'canvas',
         timings: timings
     };
-    var kinetophone = new Kinetophone([canvasChannel], timings[timings.length - 1].start + 100);
+    var kinetophone = new Kinetophone([canvasChannel], timings[timings.length - 1].start + 1000, 80);
     kinetophone.on('enter:canvas', function(event) {
         paperScopePlayback.activate();
         switch(event.data.action) {
