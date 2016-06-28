@@ -1,0 +1,22 @@
+{
+  "name": "CanvasPlaybackKinetophone",
+  "authors": [
+    "Tielman <tielman.mailbox@gmail.com>"
+  ],
+  "description": "Test Canvas Record with Events",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper": "^0.9.25",
+    "kinetophone": "^1.2.0"
+  }
+}

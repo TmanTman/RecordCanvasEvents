@@ -1,3 +1,0 @@
-# paperjs
-asdf
-a
